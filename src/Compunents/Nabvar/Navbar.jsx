@@ -3,6 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 // import { AuthContext } from "../AuthProvider/AuthProvider";
 import { CgProfile } from "react-icons/cg";
 import './Navbar.css'
+import { AuthContext } from "../AuthProvider/AuthProvider";
 
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext)

@@ -1,8 +1,12 @@
-import React, { Children, useEffect } from 'react';
+import React, {  createContext, useEffect, useState } from 'react';
 import { toast, ToastContainer } from 'react-toastify';
 import auth from '../Firebase/firebase.config';
+import { createUserWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from 'firebase/auth';
 
-const AuthProvider = ({Children}) => {
+
+export const AuthContext = createContext(null)
+const GoogleProvider = new GoogleAuthProvider()
+const AuthProvider = ({children}) => {
     const [user, setUser] = useState(null)
     const [loader, setLoder] = useState(true)
     const notify = (toasts) => {
@@ -95,7 +99,7 @@ const AuthProvider = ({Children}) => {
 
         />
 
-        {Children}
+        {children}
         </AuthContext.Provider>
     );
 };
