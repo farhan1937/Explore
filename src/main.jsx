@@ -16,6 +16,8 @@ import Register from './Compunents/Register/Register.jsx';
 import AllTouristsSport from './Compunents/AllTouristsSport/AllTouristsSport.jsx';
 import UpdateTouristsSport from './Compunents/AddTouristsSport/UpdateTouristsSport.jsx';
 import AddTouristsSport from './Compunents/AddTouristsSport/AddTouristsSport.jsx';
+import TouristsSportDetails from './Compunents/TouristsSprtDetails/TouristsSportDetails.jsx';
+import Private from './Compunents/Private/Private.jsx';
 
 const router = createBrowserRouter([
   {
@@ -54,6 +56,17 @@ const router = createBrowserRouter([
         path: '/updateTourists/:id',
         element: <UpdateTouristsSport></UpdateTouristsSport>,
         loader: ({ params }) => fetch(`https://asia-explor-server-q4t6ep2pc-farhans-projects-4f0ac41d.vercel.app/tourists/${params.id}`)
+      },
+      {
+        path: '/sportDetails/:id',
+        loader: async () => {
+          const response = await fetch('/place.json'); // Ensure this path is correct
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
+          return response.json();
+        },
+        element: <Private><TouristsSportDetails></TouristsSportDetails></Private>
       },
     ]
   },
