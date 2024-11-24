@@ -13,6 +13,7 @@ import Contact from './Compunents/Contact/Contact.jsx';
 import Login from './Compunents/Login/Login.jsx';
 import AuthProvider from './Compunents/AuthProvider/AuthProvider.jsx';
 import Register from './Compunents/Register/Register.jsx';
+import AllTouristsSport from './Compunents/AllTouristsSport/AllTouristsSport.jsx';
 
 const router = createBrowserRouter([
   {
@@ -38,7 +39,11 @@ const router = createBrowserRouter([
       {
         path:'/register',
         element:<Register></Register>
-      }
+      },
+      {
+        path: '/allTourists',
+        element: <AllTouristsSport></AllTouristsSport>
+      },
     ]
   },
 ]);

@@ -1,9 +1,8 @@
 import React from 'react';
 import { useEffect, useState } from "react";
-import AllTouristsSports from "../AllTouristsSports/AllTouristsSports";
-// import { useEffect } from "react";
-// import { Link } from "react-router-dom";
+
 import Aos from "aos";
+import AllTouristsSports from '../AllTouristsSports/AllTouristsSports';
 
 const AllTouristsSport = () => {
     const [sport, setSport] = useState([])
