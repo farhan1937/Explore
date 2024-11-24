@@ -14,6 +14,8 @@ import Login from './Compunents/Login/Login.jsx';
 import AuthProvider from './Compunents/AuthProvider/AuthProvider.jsx';
 import Register from './Compunents/Register/Register.jsx';
 import AllTouristsSport from './Compunents/AllTouristsSport/AllTouristsSport.jsx';
+import UpdateTouristsSport from './Compunents/AddTouristsSport/UpdateTouristsSport.jsx';
+import AddTouristsSport from './Compunents/AddTouristsSport/AddTouristsSport.jsx';
 
 const router = createBrowserRouter([
   {
@@ -43,6 +45,15 @@ const router = createBrowserRouter([
       {
         path: '/allTourists',
         element: <AllTouristsSport></AllTouristsSport>
+      },
+      {
+        path: '/addTourists',
+        element: <AddTouristsSport></AddTouristsSport>
+      },
+      {
+        path: '/updateTourists/:id',
+        element: <UpdateTouristsSport></UpdateTouristsSport>,
+        loader: ({ params }) => fetch(`https://asia-explor-server-q4t6ep2pc-farhans-projects-4f0ac41d.vercel.app/tourists/${params.id}`)
       },
     ]
   },
