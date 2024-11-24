@@ -85,7 +85,7 @@ const Register = () => {
                             }
                         </span><br /><br />
                         <input className="p-3  w-full  border-2 rounded-xl" type="url" name="" id="" placeholder="photoUrl" required /><br /><br />
-                        <button className="p-3 w-full border-2 rounded-xl mx-auto bg-[#e0f7fa] font-semibold">Register</button>
+                        <button className="btn p-3 w-full border-2 rounded-xl mx-auto font-semibold">Register</button>
                     </form>
 
                     <div>
