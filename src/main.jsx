@@ -18,11 +18,13 @@ import UpdateTouristsSport from './Compunents/AddTouristsSport/UpdateTouristsSpo
 import AddTouristsSport from './Compunents/AddTouristsSport/AddTouristsSport.jsx';
 import TouristsSportDetails from './Compunents/TouristsSprtDetails/TouristsSportDetails.jsx';
 import Private from './Compunents/Private/Private.jsx';
+import ErrorPage from './Compunents/ErrorPage/ErrorPage.jsx'
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Roots></Roots>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
@@ -55,7 +57,7 @@ const router = createBrowserRouter([
       {
         path: '/updateTourists/:id',
         element: <UpdateTouristsSport></UpdateTouristsSport>,
-        loader: ({ params }) => fetch(`https://asia-explor-server-q4t6ep2pc-farhans-projects-4f0ac41d.vercel.app/tourists/${params.id}`)
+        loader: ({ params }) => fetch(`http://localhost:5000/tourists/${params.id}`)
       },
       {
         path: '/sportDetails/:id',
