@@ -19,6 +19,7 @@ import AddTouristsSport from './Compunents/AddTouristsSport/AddTouristsSport.jsx
 import TouristsSportDetails from './Compunents/TouristsSprtDetails/TouristsSportDetails.jsx';
 import Private from './Compunents/Private/Private.jsx';
 import ErrorPage from './Compunents/ErrorPage/ErrorPage.jsx'
+import MyList from './Compunents/MyList/MyList.jsx';
 
 const router = createBrowserRouter([
   {
@@ -43,8 +44,12 @@ const router = createBrowserRouter([
         element: <Login></Login>
       },
       {
-        path:'/register',
-        element:<Register></Register>
+        path: '/register',
+        element: <Register></Register>
+      },
+      {
+        path: "/list",
+        element: <MyList></MyList>
       },
       {
         path: '/allTourists',
